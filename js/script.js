@@ -5,6 +5,7 @@ const navigation = document.querySelector(".nav-links");
 const navigationLinks = document.querySelectorAll(".nav-links a");
 const themeToggle = document.querySelector(".theme-toggle");
 
+// Keep the mobile menu's visual and accessibility states synchronized.
 function setMenuState(isOpen) {
   navigation.classList.toggle("is-open", isOpen);
   menuToggle.setAttribute("aria-expanded", String(isOpen));

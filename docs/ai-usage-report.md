@@ -97,13 +97,21 @@ AI assistance was used to plan a semantic HTML structure.
 The final page uses elements such as:
 
 ```html
+The final page uses semantic elements including: - `
 <header>
+  ` for the site header - `
   <nav>
+    ` for primary navigation - `
     <main>
+      ` for the primary page content - `
       <section>
+        ` for major portfolio sections - `
         <article>
+          ` for independent project, experience, education, and skill entries -
+          `
           <form>
-            <footer></footer>
+            ` for the contact form - `
+            <footer>` for site-wide footer information</footer>
           </form>
         </article>
       </section>
