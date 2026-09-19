@@ -214,6 +214,21 @@ main {
   letter-spacing: -0.02em;
 }
 
+.menu-toggle {
+  display: none;
+
+  padding: 0.45rem 0.7rem;
+
+  background-color: transparent;
+  color: var(--color-text);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -642,7 +657,47 @@ main {
     min-height: 4rem;
   }
 
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
   .nav-links {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    padding: 0.5rem;
+
+    background-color: var(--color-background);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.75rem;
+    border-radius: var(--radius-small);
+  }
+
+  .nav-links a:hover {
+    background-color: var(--color-surface);
+  }
+
+  .nav-links a::after {
     display: none;
   }
 
