@@ -3,6 +3,7 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".nav-links");
 const navigationLinks = document.querySelectorAll(".nav-links a");
+const themeToggle = document.querySelector(".theme-toggle");
 
 function setMenuState(isOpen) {
   navigation.classList.toggle("is-open", isOpen);
@@ -25,4 +26,44 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     setMenuState(false);
   }
+});
+
+const THEME_STORAGE_KEY = "portfolio-theme";
+
+function getPreferredTheme() {
+  const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
+function updateThemeButton(theme) {
+  const nextTheme = theme === "dark" ? "light" : "dark";
+
+  themeToggle.textContent = nextTheme === "dark" ? "Dark" : "Light";
+
+  themeToggle.setAttribute("aria-label", `Switch to ${nextTheme} mode`);
+}
+
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  updateThemeButton(theme);
+}
+
+const initialTheme = getPreferredTheme();
+
+setTheme(initialTheme);
+
+themeToggle.addEventListener("click", () => {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+
+  const nextTheme = currentTheme === "dark" ? "light" : "dark";
+
+  setTheme(nextTheme);
+  localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
 });

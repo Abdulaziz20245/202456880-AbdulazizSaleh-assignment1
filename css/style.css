@@ -18,6 +18,15 @@
   --transition: 180ms ease;
 }
 
+[data-theme="dark"] {
+  --color-background: #111111;
+  --color-surface: #191919;
+  --color-text: #f5f5f5;
+  --color-text-muted: #a3a3a3;
+  --color-border: #2e2e2e;
+  --color-accent: #f5f5f5;
+}
+
 /* =========================
    Reset
    ========================= */
@@ -48,6 +57,10 @@ body {
 
   font-size: 1rem;
   line-height: 1.7;
+
+  transition:
+    background-color var(--transition),
+    color var(--transition);
 }
 
 img {
@@ -189,7 +202,12 @@ main {
   top: 0;
   z-index: 100;
 
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: color-mix(
+    in srgb,
+    var(--color-background) 90%,
+    transparent
+  );
+
   border-bottom: 1px solid var(--color-border);
 
   backdrop-filter: blur(12px);
