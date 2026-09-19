@@ -8,6 +8,11 @@ const themeToggle = document.querySelector(".theme-toggle");
 function setMenuState(isOpen) {
   navigation.classList.toggle("is-open", isOpen);
   menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation menu" : "Open navigation menu",
+  );
 }
 
 menuToggle.addEventListener("click", () => {
@@ -66,4 +71,12 @@ themeToggle.addEventListener("click", () => {
 
   setTheme(nextTheme);
   localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+});
+
+const mobileBreakpoint = window.matchMedia("(max-width: 650px)");
+
+mobileBreakpoint.addEventListener("change", (event) => {
+  if (!event.matches) {
+    setMenuState(false);
+  }
 });

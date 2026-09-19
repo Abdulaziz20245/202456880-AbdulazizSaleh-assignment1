@@ -39,6 +39,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
 }
 
 body {
@@ -148,6 +149,9 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
+#main-content:focus {
+  outline: none;
+}
 /* =========================
    Main Layout
    ========================= */
@@ -774,5 +778,24 @@ main {
 
   .section {
     padding-block: 3rem;
+  }
+}
+
+/* =========================
+   Reduced Motion
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
