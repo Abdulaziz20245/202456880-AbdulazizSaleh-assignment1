@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
 
@@ -96,8 +96,8 @@
           <img
             src="assets/images/ME.jpg"
             alt="Portrait of Abdulaziz Saleh"
-            width="ACTUAL_WIDTH"
-            height="ACTUAL_HEIGHT"
+            width="1080"
+            height="1980"
             fetchpriority="high"
           />
         </div>
@@ -115,6 +115,15 @@
 
         <div class="project-grid">
           <article class="project-card">
+            <img
+              class="project-image"
+              src="assets/images/projects/cvu-computer-vision.jpg"
+              alt="Preview of the CVU Computer Vision project"
+              loading="lazy"
+              width="800"
+              height="450"
+            />
+
             <h3>CVU — Computer Vision Project</h3>
 
             <p>
@@ -124,6 +133,15 @@
           </article>
 
           <article class="project-card">
+            <img
+              class="project-image"
+              src="assets/images/projects/neo-classification.jpg"
+              alt="Preview of the Near-Earth Object Classification project"
+              loading="lazy"
+              width="800"
+              height="450"
+            />
+
             <h3>Near-Earth Object Classification</h3>
 
             <p>
@@ -142,6 +160,15 @@
           </article>
 
           <article class="project-card">
+            <img
+              class="project-image"
+              src="assets/images/projects/colorization.jpg"
+              alt="Preview of the CIFAR-10 Image Colorization project"
+              loading="lazy"
+              width="800"
+              height="450"
+            />
+
             <h3>CIFAR-10 Image Colorization</h3>
 
             <p>
@@ -160,6 +187,14 @@
           </article>
 
           <article class="project-card">
+            <img
+              class="project-image"
+              src="assets/images/projects/transformer.jpg"
+              alt="Preview of the Transformer Text Classifier project"
+              loading="lazy"
+              width="800"
+              height="450"
+            />
             <h3>Transformer Text Classifier</h3>
 
             <p>
@@ -346,6 +381,47 @@
           </p>
         </header>
 
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-button">Send Message</button>
+
+          <p
+            class="form-status"
+            id="form-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+
         <div class="contact-links">
           <a href="mailto:abdulaziz2006.saleh@gmail.com"> Email </a>
 
@@ -366,11 +442,9 @@
           </a>
         </div>
       </section>
-      <footer class="site-footer">
-        <p>
-          &copy; 2026 Abdulaziz Saleh. Built with HTML, CSS &amp; JavaScript.
-        </p>
-      </footer>
     </main>
+    <footer class="site-footer">
+      <p>&copy; 2026 Abdulaziz Saleh. Built with HTML, CSS &amp; JavaScript.</p>
+    </footer>
   </body>
 </html>

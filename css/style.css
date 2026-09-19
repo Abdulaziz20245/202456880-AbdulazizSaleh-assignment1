@@ -205,7 +205,7 @@ main {
   position: sticky;
   top: 0;
   z-index: 100;
-
+  background-color: var(--color-background);
   background-color: color-mix(
     in srgb,
     var(--color-background) 90%,
@@ -437,6 +437,17 @@ main {
   transform: translateY(-2px);
 }
 
+.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 1.25rem;
+
+  object-fit: cover;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+}
+
 .project-card h3 {
   margin-bottom: 0.75rem;
 }
@@ -627,6 +638,79 @@ main {
   border-color: var(--color-text-muted);
 
   transform: translateY(-1px);
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+
+  background-color: var(--color-background);
+  color: var(--color-text);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+
+  transition: border-color var(--transition);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+.submit-button {
+  align-self: flex-start;
+
+  padding: 0.65rem 1rem;
+
+  background-color: var(--color-text);
+  color: var(--color-background);
+
+  border: 1px solid var(--color-text);
+  border-radius: var(--radius-small);
+
+  font-weight: 500;
+}
+
+.form-status {
+  min-height: 1.7em;
+  margin: 0;
+
+  font-size: 0.875rem;
+}
+
+.contact-links {
+  margin-top: 2rem;
 }
 
 /* =========================

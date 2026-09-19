@@ -35,6 +35,7 @@ document.addEventListener("keydown", (event) => {
 
 const THEME_STORAGE_KEY = "portfolio-theme";
 
+// Use a saved preference when available; otherwise respect the system theme.
 function getPreferredTheme() {
   const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
 
@@ -73,10 +74,24 @@ themeToggle.addEventListener("click", () => {
   localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
 });
 
+// Reset the mobile menu when the layout switches back to desktop.
 const mobileBreakpoint = window.matchMedia("(max-width: 650px)");
 
 mobileBreakpoint.addEventListener("change", (event) => {
   if (!event.matches) {
     setMenuState(false);
   }
+});
+
+const contactForm = document.querySelector("#contact-form");
+const formStatus = document.querySelector("#form-status");
+
+// The assignment requires no backend, so simulate successful form interaction.
+contactForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  formStatus.textContent =
+    "Thanks for your message! This demo form does not send data yet.";
+
+  contactForm.reset();
 });
